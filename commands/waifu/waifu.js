@@ -24,6 +24,8 @@ module.exports = class BeginQuizzCommand extends Commando.Command {
 	async run(message, args) {
 
 		let waifu = await WaifuManager.getWaifuMatch(args.person);
-		message.channel.send(`La waifu de ${args.person} est ${waifu} !`);
+		message.channel.send(`La waifu de ${args.person} est...`);
+		message.channel.send(`${waifu.content.display_picture}`);
+		message.channel.send(`${waifu.url}`);
 	}
 }
